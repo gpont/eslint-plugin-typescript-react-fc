@@ -1,0 +1,56 @@
+{
+  "name": "eslint-plugin-typescript-react-fc",
+  "version": "0.1.0",
+  "description": "TS React functional components specific linting rules for ESLint",
+  "main": "index.ts",
+  "scripts": {
+    "test": "jest",
+    "run": "node-ts index.ts",
+    "compile": "tsc --project tsconfig.json",
+    "lint": "npm run lint:eslint && npm run lint:prettier && npm run lint:types",
+    "lint:eslint": "eslint . --ext .ts --fix",
+    "lint:prettier": "prettier --write ./**/*.ts",
+    "lint:prettier:check": "prettier --check ./**/*.ts",
+    "lint:types": "tsc --noEmit",
+    "precommit": "npm run lint",
+    "prepush": "npm run precommit && npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gpont/eslint-plugin-typescript-react-fc.git"
+  },
+  "keywords": [
+    "eslint",
+    "typescript",
+    "react"
+  ],
+  "author": "Evgeny Guzhikhin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gpont/eslint-plugin-typescript-react-fc/issues"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run prepush",
+      "pre-commit": "npm run precommit"
+    }
+  },
+  "homepage": "https://github.com/gpont/eslint-plugin-typescript-react-fc#readme",
+  "devDependencies": {
+    "@types/jest": "^27.0.2",
+    "@typescript-eslint/eslint-plugin": "^5.2.0",
+    "@typescript-eslint/parser": "^5.2.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.2",
+    "husky": "^7.0.4",
+    "node-ts": "^5.1.2",
+    "prettier": "^2.4.1",
+    "typescript": "^4.4.4"
+  },
+  "dependencies": {
+    "babel-jest": "^27.3.1",
+    "ts-jest": "^27.0.7"
+  }
+}
