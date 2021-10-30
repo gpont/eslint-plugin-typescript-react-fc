@@ -1,2 +1,7 @@
 # eslint-plugin-typescript-react-fc
-TS React function components specific linting rules for ESLint
+
+TS React functional components specific linting rules for ESLint
+
+## License
+
+[MIT License](./LICENSE)
