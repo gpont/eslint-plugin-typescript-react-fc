@@ -5,13 +5,14 @@
   "main": "index.ts",
   "scripts": {
     "test": "jest --passWithNoTests",
-    "test:related": "jest --passWithNoTests --bail --findRelatedTests",
     "run": "node-ts index.ts",
-    "compile": "tsc index.ts",
-    "lint": "npm run lint.eslint && npm run lint.prettier && npm run lint.types",
+    "compile": "tsc --project tsconfig.json",
+    "lint": "npm run lint:eslint && npm run lint:prettier && npm run lint:types",
     "lint:eslint": "eslint . --ext .ts --fix",
     "lint:prettier": "prettier -c ./**/*.ts",
-    "lint:types": "tsc --noEmit"
+    "lint:types": "tsc --noEmit",
+    "precommit": "npm run lint",
+    "prepush": "npm run precommit && npm run test"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,12 @@
   "bugs": {
     "url": "https://github.com/gpont/eslint-plugin-typescript-react-fc/issues"
   },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run prepush",
+      "pre-commit": "npm run precommit"
+    }
+  },
   "homepage": "https://github.com/gpont/eslint-plugin-typescript-react-fc#readme",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.2.0",
@@ -36,10 +43,8 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.25.2",
     "husky": "^7.0.4",
-    "lint-staged": "^11.2.6",
     "node-ts": "^5.1.2",
     "prettier": "^2.4.1",
-    "tsc": "^2.0.3",
     "typescript": "^4.4.4"
   }
 }
