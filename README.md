@@ -4,10 +4,20 @@
 [![Npm package version](https://badgen.net/npm/v/eslint-plugin-typescript-react-fc)](https://npmjs.com/package/eslint-plugin-typescript-react-fc)
 [![GitHub latest commit](https://badgen.net/github/last-commit/gpont/eslint-plugin-typescript-react-fc/main)](https://github.com/gpont/eslint-plugin-typescript-react-fc/commit/)
 
-
 TS React functional components specific linting rules for ESLint
 
-## Rules
+## Contents
+
+- [eslint-plugin-typescript-react-fc](#eslint-plugin-typescript-react-fc)
+  - [Contents](#contents)
+  - [Rules(docs)](#rulesdocs)
+  - [Running](#running)
+    - [Tests](#tests)
+  - [Authors](#authors)
+  - [Contributing](#contributing)
+  - [License](#license)
+
+## Rules(docs)
 
 - [prefer-react-fc](./docs/rules/prefer-react-fc.md)
 
