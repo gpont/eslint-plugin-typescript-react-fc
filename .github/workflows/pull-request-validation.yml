@@ -17,4 +17,4 @@ jobs:
       - name: Check types
         run: npm run ci:lint:types
       - name: Run unit tests
-        run: npm run ci:tests
+        run: npm run ci:test
