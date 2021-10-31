@@ -15,7 +15,7 @@
     "ci:lint:eslint": "eslint . --ext .ts",
     "ci:lint:prettier": "npm run lint:prettier:check",
     "ci:lint:types": "npm run lint:types",
-    "ci:test": "npm run test",
+    "ci:test": "npx jest",
     "precommit": "npm run lint",
     "prepush": "npm run precommit && npm run test"
   },
