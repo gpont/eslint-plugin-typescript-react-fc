@@ -9,7 +9,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v1
       - name: Installing deps
-        run: npm install
+        run: npm ci
       - name: Linting eslint
         run: npm run ci:lint:eslint
       - name: Linting prettier
