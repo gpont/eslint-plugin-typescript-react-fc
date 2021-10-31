@@ -12,6 +12,10 @@
     "lint:prettier": "prettier --write ./**/*.ts",
     "lint:prettier:check": "prettier --check ./**/*.ts",
     "lint:types": "tsc --noEmit",
+    "ci:lint:eslint": "npm run lint:eslint",
+    "ci:lint:prettier": "npm run lint:prettier:check",
+    "ci:lint:types": "npm run lint:types",
+    "ci:test": "npm run test",
     "precommit": "npm run lint",
     "prepush": "npm run precommit && npm run test"
   },
