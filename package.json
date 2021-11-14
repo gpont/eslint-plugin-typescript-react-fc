@@ -17,7 +17,8 @@
     "ci:lint:types": "npm run lint:types",
     "ci:test": "npx jest",
     "precommit": "npm run lint",
-    "prepush": "npm run precommit && npm run test"
+    "prepush": "npm run precommit && npm run test",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -32,12 +33,6 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/gpont/eslint-plugin-typescript-react-fc/issues"
-  },
-  "husky": {
-    "hooks": {
-      "pre-push": "npm run prepush",
-      "pre-commit": "npm run precommit"
-    }
   },
   "homepage": "https://github.com/gpont/eslint-plugin-typescript-react-fc#readme",
   "devDependencies": {
