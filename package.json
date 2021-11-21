@@ -51,6 +51,7 @@
     "ts-jest": "^27.0.7"
   },
   "dependencies": {
+    "@babel/preset-typescript": "^7.16.0",
     "@types/eslint": "^8.2.0",
     "@types/estree": "0.0.50",
     "@types/jest": "^27.0.2",

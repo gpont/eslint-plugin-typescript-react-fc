@@ -6,7 +6,7 @@ describe("Rule prefere-react-fc", () => {
     expect("prefer-react-fc" in libs.rules).toBe(true);
   });
 
-  it("should throw error", () => {
+  it("should not throw error with correct context", () => {
     const prefereReactFc = libs.rules["prefer-react-fc"].create;
     const reporter = jest.fn();
     const mockContextOptions: IMockOptions = {
@@ -39,6 +39,6 @@ describe("Rule prefere-react-fc", () => {
       report: reporter
     };
 
-    expect(prefereReactFc(createMockContext(mockContextOptions))).toThrow();
+    expect(typeof prefereReactFc(createMockContext(mockContextOptions))).toBe("object");
   });
 });
