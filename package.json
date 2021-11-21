@@ -4,7 +4,7 @@
   "description": "TS React functional components specific linting rules for ESLint",
   "main": "index.ts",
   "scripts": {
-    "test": "jest",
+    "test": "jest --config jest.config.js",
     "run": "node-ts index.ts",
     "compile": "tsc --project tsconfig.json",
     "build": "tsup libs/index.ts --no-splitting --minify",
@@ -52,6 +52,7 @@
   },
   "dependencies": {
     "@types/eslint": "^8.2.0",
+    "@types/estree": "0.0.50",
     "@types/jest": "^27.0.2",
     "eslint": "^7.32.0",
     "tsup": "^5.7.4",
