@@ -1,8 +1,8 @@
-import { IRule } from "../types";
+import { Rule } from "eslint";
 
-export const prefereReactFC: IRule = {
+export const prefereReactFC: Rule.RuleModule = {
   create: (context) => ({
-    ImportDeclaration(node) {
+    "ImportDeclaration": (node) => {
       context.report({
         node,
         message: 'Are you sure about this?'
