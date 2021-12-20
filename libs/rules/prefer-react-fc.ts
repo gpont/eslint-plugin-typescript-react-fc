@@ -16,11 +16,11 @@ export const prefereReactFC: Rule.RuleModule = {
     schema: [] // TODO
   },
   create: (context) => ({
-    "VariableDeclaration > ArrowFunction > ParenthesizedExpression > JsxElement": (node: Node) => {
-      context.report({
-        node,
-        message: 'You have to use React.FC'
-      })
+    "VariableDeclaration ArrowFunctionExpression ReturnStatement": (node: Node) => {
+      // context.report({
+      //   node,
+      //   message: 'You have to use React.FC'
+      // })
     }
   })
 };

@@ -5,67 +5,85 @@ tester.run("prefere-react-fc", prefereReactFC, {
   valid: [
     {
       code: `
-        import React from 'react';
-
-        const ComponentName: React.FC = () => (
-          <div></div>
-        );
-      `
-    },
-    {
-      code: `
         const ComponentName: React.FC = () => {
-          return (
-            <div></div>
-          );
-        };
-      `
-    },
-    {
-      code: `
-        const ComponentName: React.FC = function() {
-          return (
-            <div></div>
-          );
-        };
-      `
-    },
-    {
-      code: `
-        interface IComponentNameProps {}
+          console.log('smth');
 
-        const ComponentName: React.FC<IComponentNameProps> = () => (
-          <div></div>
-        );
-      `
-    },
-    {
-      code: `
-        interface IComponentNameProps {}
-
-        const ComponentName: React.FC<IComponentNameProps> = () => {
-          return (
-            <div></div>
-          );
+          return 'smth';
         };
       `
     },
-    {
-      code: `
-        interface IComponentNameProps {}
+    // {
+    //   code: `
+    //     const ComponentName: React.FC = () => (
+    //       <div></div>
+    //     );
+    //   `
+    // },
+    // {
+    //   code: `
+    //     const ComponentName: React.FC = () => {
+    //       console.log('smth');
 
-        const ComponentName: React.FC<IComponentNameProps> = function() {
-          return (
-            <div></div>
-          );
-        };
-      `
-    },
+    //       return (
+    //         <div></div>
+    //       );
+    //     };
+    //   `
+    // },
+    // {
+    //   code: `
+    //     const ComponentName: React.FC = () => {
+    //       return (
+    //         <div></div>
+    //       );
+    //     };
+    //   `
+    // },
+    // {
+    //   code: `
+    //     const ComponentName: React.FC = function() {
+    //       return (
+    //         <div></div>
+    //       );
+    //     };
+    //   `
+    // },
+    // {
+    //   code: `
+    //     interface IComponentNameProps {}
+
+    //     const ComponentName: React.FC<IComponentNameProps> = () => (
+    //       <div></div>
+    //     );
+    //   `
+    // },
+    // {
+    //   code: `
+    //     interface IComponentNameProps {}
+
+    //     const ComponentName: React.FC<IComponentNameProps> = () => {
+    //       return (
+    //         <div></div>
+    //       );
+    //     };
+    //   `
+    // },
+    // {
+    //   code: `
+    //     interface IComponentNameProps {}
+
+    //     const ComponentName: React.FC<IComponentNameProps> = function() {
+    //       return (
+    //         <div></div>
+    //       );
+    //     };
+    //   `
+    // },
   ],
   invalid: [
-    {
-      code: `import React from 'react';`,
-      errors: [{ message: "Are you sure about this?" }],
-    },
+    // {
+    //   code: `import React from 'react';`,
+    //   errors: [{ message: 'You have to use React.FC' }],
+    // },
   ],
 });
