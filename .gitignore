@@ -45,3 +45,6 @@ typings/
 
 # Jest
 /coverage
+
+# Mac OS Trash
+.DS_Store
