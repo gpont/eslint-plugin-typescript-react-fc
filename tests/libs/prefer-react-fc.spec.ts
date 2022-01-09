@@ -19,66 +19,66 @@ tester.run('prefere-react-fc', prefereReactFC, {
         );
       `,
     },
-    // {
-    //   code: `
-    //     const ComponentName: React.FC = () => {
-    //       console.log('smth');
+    {
+      code: `
+        const ComponentName: React.FC = () => {
+          console.log('smth');
 
-    //       return (
-    //         <div></div>
-    //       );
-    //     };
-    //   `
-    // },
-    // {
-    //   code: `
-    //     const ComponentName: React.FC = () => {
-    //       return (
-    //         <div></div>
-    //       );
-    //     };
-    //   `
-    // },
-    // {
-    //   code: `
-    //     const ComponentName: React.FC = function() {
-    //       return (
-    //         <div></div>
-    //       );
-    //     };
-    //   `
-    // },
-    // {
-    //   code: `
-    //     interface IComponentNameProps {}
+          return (
+            <div></div>
+          );
+        };
+      `,
+    },
+    {
+      code: `
+        const ComponentName: React.FC = () => {
+          return (
+            <div></div>
+          );
+        };
+      `,
+    },
+    {
+      code: `
+        const ComponentName: React.FC = function() {
+          return (
+            <div></div>
+          );
+        };
+      `,
+    },
+    {
+      code: `
+        interface IComponentNameProps {}
 
-    //     const ComponentName: React.FC<IComponentNameProps> = () => (
-    //       <div></div>
-    //     );
-    //   `
-    // },
-    // {
-    //   code: `
-    //     interface IComponentNameProps {}
+        const ComponentName: React.FC<IComponentNameProps> = () => (
+          <div></div>
+        );
+      `,
+    },
+    {
+      code: `
+        interface IComponentNameProps {}
 
-    //     const ComponentName: React.FC<IComponentNameProps> = () => {
-    //       return (
-    //         <div></div>
-    //       );
-    //     };
-    //   `
-    // },
-    // {
-    //   code: `
-    //     interface IComponentNameProps {}
+        const ComponentName: React.FC<IComponentNameProps> = () => {
+          return (
+            <div></div>
+          );
+        };
+      `,
+    },
+    {
+      code: `
+        interface IComponentNameProps {}
 
-    //     const ComponentName: React.FC<IComponentNameProps> = function() {
-    //       return (
-    //         <div></div>
-    //       );
-    //     };
-    //   `
-    // },
+        const ComponentName: React.FC<IComponentNameProps> = function() {
+          return (
+            <div></div>
+          );
+        };
+      `,
+    },
   ],
   invalid: [
     // {
