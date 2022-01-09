@@ -1,4 +1,4 @@
-import {prefereReactFC} from './rules/prefer-react-fc';
+import { prefereReactFC } from './rules/prefer-react-fc';
 
 export default {
   rules: {

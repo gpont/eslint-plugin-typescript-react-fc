@@ -1,7 +1,7 @@
-import { prefereReactFC } from "../../libs/rules/prefer-react-fc";
-import { tester } from "../tester";
+import { prefereReactFC } from '../../libs/rules/prefer-react-fc';
+import { tester } from '../tester';
 
-tester.run("prefere-react-fc", prefereReactFC, {
+tester.run('prefere-react-fc', prefereReactFC, {
   valid: [
     {
       code: `
@@ -10,15 +10,15 @@ tester.run("prefere-react-fc", prefereReactFC, {
 
           return 'smth';
         };
-      `
+      `,
     },
-    // {
-    //   code: `
-    //     const ComponentName: React.FC = () => (
-    //       <div></div>
-    //     );
-    //   `
-    // },
+    {
+      code: `
+        const ComponentName: React.FC = () => (
+          <div></div>
+        );
+      `,
+    },
     // {
     //   code: `
     //     const ComponentName: React.FC = () => {
