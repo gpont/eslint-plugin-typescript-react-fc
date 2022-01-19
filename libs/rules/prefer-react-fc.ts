@@ -3,15 +3,21 @@ import { Rule } from 'eslint';
 import { Node, ArrowFunctionExpression } from 'estree';
 import { Statement, VariableDeclaration } from 'typescript';
 
+/**
+ * @param node ReturnStatement
+ * @return ArrowFunctionExpression | null
+ */
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-const getParentArrowFuncFromReturnStatement = (node) => {
+const getParentArrowFunc = (node) => {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   let { parent } = node;
-  while (parent.type !== 'ArrowFunctionExpression') {
-    parent = parent.node;
+  while (parent.type !== 'ArrowFunctionExpression' && parent.parent !== null) {
+    parent = parent.parent;
   }
+
+  return parent;
 };
 
 /**
@@ -55,13 +61,28 @@ export const prefereReactFC: Rule.RuleModule = {
     'VariableDeclaration ArrowFunctionExpression ReturnStatement': (node: Rule.Node) => {
       // const returnStatement = node.parent;
       // const test = isReactFC(getTypeNameObject(returnStatement));
+      console.log({ node });
 
-      console.log({ node, isComponent: isComponent(node) });
+      if (!isComponent(node)) {
+        return;
+      }
 
-      context.report({
-        node,
-        messageId: 'haveTo',
-      });
+      const arrowFuncStatement = getParentArrowFunc(node);
+
+      if (arrowFuncStatement === null) {
+        return;
+      }
+
+      const hasReactFC = isReactFC(getTypeNameObject(arrowFuncStatement));
+
+      console.log({ arrowFuncStatement, hasReactFC });
+
+      if (hasReactFC) {
+        context.report({
+          node,
+          messageId: 'haveTo',
+        });
+      }
     },
   }),
 };
