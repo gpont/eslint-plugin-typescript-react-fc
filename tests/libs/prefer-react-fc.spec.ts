@@ -1,4 +1,3 @@
-import { RuleTester } from 'eslint';
 import { prefereReactFC } from '../../libs/rules/prefer-react-fc';
 import { tester } from '../tester';
 
@@ -89,10 +88,8 @@ tester.run('prefere-react-fc', prefereReactFC, {
         );
       };
     `,
-  ].map(
-    (code): RuleTester.InvalidTestCase => ({
-      code,
-      errors: [{ messageId: 'haveTo' }],
-    }),
-  ),
+  ].map((code) => ({
+    code,
+    errors: [{ messageId: 'haveTo' }],
+  })),
 });
