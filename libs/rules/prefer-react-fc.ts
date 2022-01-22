@@ -4,7 +4,7 @@ import { createRule } from '../utils';
 const isArrowFunctionExpression = (
   node: TSESTree.BaseNode | undefined,
 ): node is TSESTree.ArrowFunctionExpression =>
-  node?.type !== AST_NODE_TYPES.ArrowFunctionExpression;
+  node?.type === AST_NODE_TYPES.ArrowFunctionExpression;
 
 const getParentArrowFunc = (node: TSESTree.ReturnStatement) => {
   let { parent } = node;
