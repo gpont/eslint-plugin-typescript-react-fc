@@ -1,15 +1,14 @@
-import { Rule } from 'eslint';
-// eslint-disable-next-line import/no-unresolved
-import { Node } from 'estree';
+import { TSESTree } from '@typescript-eslint/utils';
+import { createRule, getParentArrowFunc, getTypeNameObject, isReactFC } from '../utils';
 
 // TODO read https://eslint.org/docs/developer-guide/working-with-rules
-export const prefereReactFC: Rule.RuleModule = {
+export const prefereReactFC = createRule({
+  name: 'prefere-react-fc',
   meta: {
     type: 'suggestion',
     docs: {
       description: 'prefer React.FC type for props typing',
-      recommended: true,
-      url: 'https://github.com/gpont/eslint-plugin-typescript-react-fc/blob/main/docs/rules/prefer-react-fc.md',
+      recommended: 'error',
     },
     fixable: 'code', // TODO
     // TODO hasSuggestions: true
@@ -18,12 +17,23 @@ export const prefereReactFC: Rule.RuleModule = {
       haveTo: 'You have to use React.FC',
     },
   },
+  defaultOptions: [],
   create: (context) => ({
-    'VariableDeclaration ArrowFunctionExpression ReturnStatement': (node: Node) => {
-      // context.report({
-      //   node,
-      //   messageId: 'haveTo',
-      // });
+    'VariableDeclaration ArrowFunctionExpression JSXElement': (node: TSESTree.JSXElement) => {
+      const arrowFuncStatement = getParentArrowFunc(node);
+
+      if (arrowFuncStatement === null) {
+        return;
+      }
+
+      const typeName = getTypeNameObject(arrowFuncStatement);
+
+      if (typeName === null || !isReactFC(typeName)) {
+        context.report({
+          node,
+          messageId: 'haveTo',
+        });
+      }
     },
   }),
-};
+});
