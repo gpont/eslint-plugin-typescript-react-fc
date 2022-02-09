@@ -1,7 +1,7 @@
 name: Pull Request Validation
 on: [pull_request]
 jobs:
-  Pull-Request-Validation:
+  Lint:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -19,8 +19,32 @@ jobs:
       - name: Linting prettier
         run: npm run ci:lint:prettier
 
+  Compile:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+
+      - name: Installing deps
+        run: npm ci
+
       - name: Check types
         run: npm run ci:lint:types
+
+  Tests with coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+
+      - name: Installing deps
+        run: npm ci
 
       - name: Run unit tests with coverage report
         uses: willcaul/jest-github-action@v1.0.2
