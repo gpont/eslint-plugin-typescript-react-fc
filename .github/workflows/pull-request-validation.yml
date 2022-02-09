@@ -6,15 +6,25 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+
       - name: Setup Node.js
         uses: actions/setup-node@v1
+
       - name: Installing deps
         run: npm ci
+
       - name: Linting eslint
         run: npm run ci:lint:eslint
+
       - name: Linting prettier
         run: npm run ci:lint:prettier
+
       - name: Check types
         run: npm run ci:lint:types
-      - name: Run unit tests
-        run: npm run ci:test
+
+    - name: Run unit tests with coverage report
+      uses: willcaul/jest-github-action@v1.0.2
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        test-command: yarn ci:test
