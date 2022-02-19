@@ -1,5 +1,7 @@
 import React from 'react';
 
 export const App = () => {
-  return <div>Some text</div>;
+  const someVar = 5;
+
+  return <div>Some text {someVar}</div>;
 };
