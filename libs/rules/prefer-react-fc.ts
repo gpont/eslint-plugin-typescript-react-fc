@@ -14,7 +14,7 @@ export const prefereReactFC = createRule({
     // TODO hasSuggestions: true
     schema: [], // TODO
     messages: {
-      haveTo: 'You have to use React.FC',
+      haveTo: 'You should use React.FC',
     },
   },
   defaultOptions: [],

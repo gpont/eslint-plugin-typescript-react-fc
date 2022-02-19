@@ -23,5 +23,9 @@
   "rules": {
     "import/extensions": 0,
     "import/prefer-default-export": 0
-  }
+  },
+  "ignorePatterns": [
+    "node_modules",
+    "e2e"
+  ]
 }
