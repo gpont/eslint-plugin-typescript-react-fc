@@ -9,6 +9,8 @@ jobs:
 
       - name: Setup Node.js
         uses: actions/setup-node@v1
+        with:
+          node-version: '14'
 
       - name: Installing deps
         run: npm ci
@@ -27,6 +29,8 @@ jobs:
 
       - name: Setup Node.js
         uses: actions/setup-node@v1
+        with:
+          node-version: '14'
 
       - name: Installing deps
         run: npm ci
@@ -34,7 +38,7 @@ jobs:
       - name: Check types
         run: npm run ci:lint:types
 
-  Tests with coverage:
+  TestsWithCoverage:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -42,6 +46,8 @@ jobs:
 
       - name: Setup Node.js
         uses: actions/setup-node@v1
+        with:
+          node-version: '14'
 
       - name: Installing deps
         run: npm ci
@@ -52,3 +58,20 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           test-command: yarn ci:test
+
+  E2E:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14'
+
+      - name: Installing deps
+        run: npm ci
+
+      - name: Run e2e
+        run: npm run ci:e2e

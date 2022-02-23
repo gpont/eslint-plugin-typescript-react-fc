@@ -27,6 +27,7 @@ module.export = {
 
   // An array of regexp pattern strings used to skip coverage collection
   coveragePathIgnorePatterns: [
+    '/e2e/',
     '/node_modules/',
     'index.ts',
     '.d.ts',

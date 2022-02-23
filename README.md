@@ -12,7 +12,8 @@ TS React functional components specific linting rules for ESLint
   - [Contents](#contents)
   - [Rules(docs)](#rulesdocs)
   - [Running](#running)
-    - [Tests](#tests)
+    - [Unit tests](#unit-tests)
+    - [E2E tests](#e2e-tests)
   - [Authors](#authors)
   - [Contributing](#contributing)
   - [License](#license)
@@ -23,10 +24,16 @@ TS React functional components specific linting rules for ESLint
 
 ## Running
 
-### Tests
+### Unit tests
 
 ```
 npm run test
+```
+
+### E2E tests
+
+```
+npm run e2e:setup && npm run e2e:run
 ```
 
 ## Authors
