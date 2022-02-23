@@ -11,7 +11,8 @@
     "LICENSE"
   ],
   "scripts": {
-    "e2e": "cd e2e && npm run lint:json | node ../scripts/parseE2EReport.js",
+    "e2e:setup": "npm run build && cd e2e && npm i && cd ..",
+    "e2e:run": "cd e2e && npm run lint:json | node ../scripts/parseE2EReport.js",
     "test": "jest --config jest.config.js",
     "test:withCoverage": "yarn run test --coverage --collectCoverageFrom='./**/*.ts'",
     "test:watch": "jest --config jest.config.js --watchAll",
@@ -27,7 +28,7 @@
     "ci:lint:prettier": "npm run lint:prettier:check",
     "ci:lint:types": "npm run lint:types",
     "ci:test": "npx jest --config jest.config.js --coverage --ci",
-    "ci:e2e": "cd e2e && npm i && cd .. && npm run e2e",
+    "ci:e2e": "npm run e2e:setup && npm run e2e:run",
     "precommit": "npm run lint",
     "prepush": "npm run precommit && npm run test",
     "prepare": "husky install"
