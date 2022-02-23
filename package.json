@@ -27,7 +27,7 @@
     "ci:lint:prettier": "npm run lint:prettier:check",
     "ci:lint:types": "npm run lint:types",
     "ci:test": "npx jest --config jest.config.js --coverage --ci",
-    "ci:e2e": "npm run e2e",
+    "ci:e2e": "cd e2e && npm i && cd .. && npm run e2e",
     "precommit": "npm run lint",
     "prepush": "npm run precommit && npm run test",
     "prepare": "husky install"
