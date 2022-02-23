@@ -34,7 +34,7 @@ jobs:
       - name: Check types
         run: npm run ci:lint:types
 
-  Tests with coverage:
+  TestsWithCoverage:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
