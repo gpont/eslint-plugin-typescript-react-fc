@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+// TODO переписать на typescript
 const readline = require('readline');
 
 const RED_TERMINAL_COLOR = '\x1b[31m';
