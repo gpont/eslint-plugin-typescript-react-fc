@@ -1,9 +1,9 @@
 import React from 'react';
 
-interface ITest1Props {
+interface ITest2Props {
   prop: string;
 }
 
-export const Test1: React.FC<ITest1Props> = ({ prop }) => {
+export const Test2: React.FC<ITest2Props> = ({ prop }) => {
   return <div>Some text {prop}</div>;
 };

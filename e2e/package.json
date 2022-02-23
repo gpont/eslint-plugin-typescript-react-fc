@@ -17,10 +17,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "eject": "react-scripts eject",
     "lint": "node_modules/.bin/eslint --config .eslintrc.json ./src",
+    "lint:json": "npm run lint -- --format json",
     "lint:fix": "npm run lint -- --fix"
   },
   "eslintConfig": {
